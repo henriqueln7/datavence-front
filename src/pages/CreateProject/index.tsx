@@ -10,6 +10,7 @@ const CreateProject: React.FC = () => {
     event.preventDefault();
 
     await api.post("/projects", { name });
+    alert('Projeto criado');
   }
   return (
     <div id="page-create-project">
@@ -24,7 +25,7 @@ const CreateProject: React.FC = () => {
               type="text"
               name="name"
               placeholder="Nome do projeto"
-              onChange={event => setName(event.target.name)}
+              onChange={event => setName(event.target.value)}
               required
               autoFocus
             />

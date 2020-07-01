@@ -37,7 +37,7 @@ const ProjectList: React.FC = () => {
     <div>
       <h2 className="title">Lista de projetos</h2>
 
-      <div className="project-grid">
+      <div className="users-grid">
         {
           projects.map((project) => (
             <ProjectListItem project={project}/>

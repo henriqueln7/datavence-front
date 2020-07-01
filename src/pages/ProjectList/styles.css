@@ -30,14 +30,14 @@
     font-size: 2rem;
 }
 
-.project-grid {
+.users-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
     list-style: none;
 }
 
-.project-grid div {
+.users-grid div {
     background: #f5f5f5;
     border: 2px solid #f5f5f5;
     height: 180px;
@@ -53,7 +53,7 @@
     cursor: pointer;
 }
 
-.project-grid div span {
+.users-grid div span {
     flex: 1;
     margin-top: 12px;
 

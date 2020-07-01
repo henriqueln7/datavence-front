@@ -1,12 +1,15 @@
 import React, {ChangeEvent, FormEvent, useState} from 'react';
 import './styles.css';
 import api from "../../services/api";
+import {useHistory} from "react-router-dom";
+
 
 const CreateUser: React.FC = () => {
+
+    const history = useHistory();
+
     const [inputData, setInputData] = useState({
         name: '',
-        username: '',
-        password: '',
         birthday: new Date()
     });
 
@@ -18,6 +21,7 @@ const CreateUser: React.FC = () => {
         event.preventDefault();
 
         await api.post("/users", inputData);
+        history.goBack();
     }
 
     return (
@@ -41,27 +45,6 @@ const CreateUser: React.FC = () => {
                           onChange={handleInputChange}
                           required
                           autoFocus
-                        />
-                    </div>
-                    <div className="field">
-                        <label htmlFor="username">Nome de usuário</label>
-                        <input
-                          type="text"
-                          name="username"
-                          id="username"
-                          onChange={handleInputChange}
-                          required
-                        />
-                    </div>
-                    <div className="field">
-                        <label htmlFor="whatsapp">Senha</label>
-                        <input
-                          type="password"
-                          name="password"
-                          placeholder="Senha"
-                          onChange={handleInputChange}
-                          id="password"
-                          required
                         />
                     </div>
                     <div className="field">
